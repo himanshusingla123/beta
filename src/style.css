@@ -1,0 +1,37 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body
+{
+    padding-top: 20px;
+    background-color: black;
+}
+
+.webgl{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 25px;
+}
+
+#homediv
+{
+    position: static;
+}
+
+#homeDivHeading
+{
+    user-select: none;
+    position: relative;
+    z-index: 1;
+    font-size: 60px;
+    font-family:serif;
+    text-align: center;
+    color:white;
+    text-shadow:violet 1px 0 10px
+}
