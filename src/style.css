@@ -64,3 +64,28 @@ body {
 #envyHeadingKeyWord { font-size: 120px;color: rgb(254, 0, 0); }
 #prideHeadingKeyWord { font-size: 120px; color: rgb(254, 241, 0); }
 
+/*
+
+
+*/
+
+.sin
+{
+    border-radius: 35px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.sin
+{
+    opacity: 0;
+    transform: translateX(-100%) ;
+    transition: all 1.5s;
+    background-color:white;
+}
+.show
+{
+    background-color: black;
+    opacity: 1;
+    transform: translateX(0);
+}
