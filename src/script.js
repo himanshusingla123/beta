@@ -65,7 +65,11 @@ const homeDivHeading = document.getElementById('homeDivHeading')
 
 if(device.type != "desktop")
 {
-    gltf_loader.load('./sculpture/scene.gltf',(gltf)=>{ object=gltf.scene;object.scale.set(0.11,0.11,0.11);object.position.set(0,-6,0);object.rotation.y=3;scene.add(object)}) 
+    gltf_loader.load('./sculpture/scene.gltf',(gltf)=>{ object=gltf.scene;object.scale.set(0.11,0.11,0.11);object.position.set(0,-6,0);object.rotation.y=3;scene.add(object)});
+    const introHeadingKeyword = document.getElementById('introHeadingKeyWord') 
+    introHeadingKeyword.style.fontSize = "80px"
+    canvas.style.maxWidth = "95%"
+
 }
 else
 {
