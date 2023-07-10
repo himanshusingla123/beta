@@ -20,9 +20,10 @@ body {
     user-select: none;
     position: relative;
     z-index: 1;
-    font-size: 60px;
+    font-size: 110px;
     font-family: serif;
-    text-align: center;
+    text-align: left;
+    margin-left: 5%;
     color: rgb(222, 66, 66);
 }
 
@@ -44,7 +45,7 @@ body {
 
 #introHeadingKeyWord,#outroHeadingKeyword
 {
-    font-size: 120px;
+    font-size: 130px;
     color: blue;
 }
 /* SINS DIV */
@@ -52,8 +53,6 @@ body {
 #lustHeading,#guttonyHeading,#greedHeading,#slothHeading,#wrathHeading,#envyHeading,#prideHeading
 {
     font-family:sans-serif;
-    padding: 10px;
-    margin: 10px;
 }
 
 #lustHeadingKeyWord { font-size: 120px; color:palevioletred; }
@@ -74,6 +73,7 @@ body {
     border-radius: 35px;
     padding: 10px;
     margin: 10px;
+    margin-left: 2%;
 }
 
 .sin
