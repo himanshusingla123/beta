@@ -19,8 +19,8 @@ body {
 
 .outroCanvas {
     border-radius: 25px;
-    position: relative;
     z-index: 1;
+    margin-top: -400%;
 }
 
 #homeDivHeading {
@@ -53,7 +53,8 @@ body {
 #outroHeading
 {
     font-family:sans-serif;
-    padding: 20px;
+    padding: 40px;
+    word-spacing: 5px;
 }
 
 #introHeadingKeyWord,#outroHeadingKeyword
