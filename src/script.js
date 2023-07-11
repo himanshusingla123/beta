@@ -42,7 +42,29 @@ const wireframeGeometry = new THREE.BoxBufferGeometry(15,32,16)
 const wireframeMaterial = new THREE.MeshNormalMaterial({wireframe:true})
 wireframeMaterial.side = THREE.DoubleSide
 const wireframe = new THREE.Mesh(wireframeGeometry,wireframeMaterial)
+
+const wireframeGeometry2 = new THREE.BoxBufferGeometry(15,32,16)
+const wireframeMaterial2 = new THREE.MeshNormalMaterial({wireframe:true})
+wireframeMaterial2.side = THREE.DoubleSide
+const wireframe2 = new THREE.Mesh(wireframeGeometry2,wireframeMaterial2)
+
 scene.add(wireframe)
+
+const canvas2 = document.querySelector('canvas.outroCanvas')
+const scene2 = new THREE.Scene()
+const camera2 = new THREE.PerspectiveCamera(60, sizes.width / sizes.height, 0.001, 10000)
+camera2.position.set(0,0,7)
+scene2.add(camera2)    
+const controls2 = new OrbitControls(camera2, canvas2)
+controls2.enableDamping = true
+controls2.enablePan = false; 
+controls2.maxDistance = 10
+controls2.maxPolarAngle = Math.PI / 2.8
+const renderer2 = new THREE.WebGLRenderer({canvas: canvas2})
+renderer2.setSize(sizes.width, sizes.height)
+renderer2.setPixelRatio(window.devicePixelRatio)
+scene2.add(wireframe2)
+
 
 //Animate
 const time = clock.getElapsedTime()
@@ -50,10 +72,13 @@ const tick = () =>
 {
     const time = clock.getElapsedTime()
     wireframe.rotation.y= 1*time
+    wireframe2.rotation.y= 1*time
     // Update controls
     controls.update()
+    controls2.update();
     // Render
-    renderer.render(scene, camera)       
+    renderer.render(scene, camera)   
+    renderer2.render(scene2,camera2)    
     // Call tick again on the next frame   
     window.requestAnimationFrame(tick)
 }
@@ -91,3 +116,10 @@ const observer = new IntersectionObserver ((entries) => {
 
 
 sin.forEach((el) => observer .observe (el));
+
+
+
+
+
+
+

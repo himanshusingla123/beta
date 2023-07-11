@@ -8,12 +8,19 @@ html,
 body {
     padding-top: 20px;
     background-color: black;
+    
 }
 
 .webgl {
     border-radius: 25px;
     margin-left: 3%;
     margin-top: -23%;
+}
+
+.outroCanvas {
+    border-radius: 25px;
+    position: relative;
+    z-index: 1;
 }
 
 #homeDivHeading {
@@ -37,10 +44,16 @@ body {
     margin-top: 5%;
 }
 
-#intoHeading,#outroHeading
+#intoHeading
 {
     font-family:sans-serif;
-    padding: 10px;
+    padding: 20px;
+}
+
+#outroHeading
+{
+    font-family:sans-serif;
+    padding: 20px;
 }
 
 #introHeadingKeyWord,#outroHeadingKeyword
@@ -48,6 +61,8 @@ body {
     font-size: 130px;
     color: blue;
 }
+
+
 /* SINS DIV */
 
 #lustHeading,#guttonyHeading,#greedHeading,#slothHeading,#wrathHeading,#envyHeading,#prideHeading
