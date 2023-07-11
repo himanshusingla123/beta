@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+html,
+body {
+    padding-top: 20px;
+    background-color: black;
+    
+}
+
+.webgl {
+    border-radius: 25px;
+    margin-left: 3%;
+    margin-top: -23%;
+}
+
+.outroCanvas {
+    border-radius: 25px;
+    z-index: 1;
+    margin-top: -400%;
+}
+
+#homeDivHeading {
+    user-select: none;
+    position: relative;
+    z-index: 1;
+    font-size: 110px;
+    font-family: serif;
+    text-align: left;
+    margin-left: 5%;
+    color: rgb(222, 66, 66);
+}
+
+/* INTO DIV */
+
+#introDiv,#outroDiv
+{
+    border-radius: 25px;
+    margin-left: 3%;
+    width: 95%;
+    margin-top: 5%;
+}
+
+#intoHeading
+{
+    font-family:sans-serif;
+    padding: 20px;
+}
+
+#outroHeading
+{
+    font-family:sans-serif;
+    padding: 40px;
+    word-spacing: 5px;
+}
+
+#introHeadingKeyWord,#outroHeadingKeyword
+{
+    font-size: 130px;
+    color: blue;
+}
+
+
+/* SINS DIV */
+
+#lustHeading,#guttonyHeading,#greedHeading,#slothHeading,#wrathHeading,#envyHeading,#prideHeading
+{
+    font-family:sans-serif;
+}
+
+#lustHeadingKeyWord { font-size: 120px; color:palevioletred; }
+#guttonyHeadingKeyWord { font-size: 120px;color: rgb(137, 240, 3); }
+#greedHeadingKeyWord { font-size: 120px;color: rgb(0, 207, 254); }
+#slothHeadingKeyWord { font-size: 120px;color: rgb(254, 161, 0); }
+#wrathHeadingKeyWord { font-size: 120px;color: rgb(186, 0, 254); }
+#envyHeadingKeyWord { font-size: 120px;color: rgb(254, 0, 0); }
+#prideHeadingKeyWord { font-size: 120px; color: rgb(254, 241, 0); }
+
+/*
+
+
+*/
+
+.sin
+{
+    border-radius: 35px;
+    padding: 10px;
+    margin: 10px;
+    margin-left: 2%;
+}
+
+.sin
+{
+    transform: translateX(-100%) ;
+    transition: all 0.5s;
+    background-color:white;
+}
+.show
+{
+    background-color: black;
+    transform: translateX(0);
+}
+
+/*# sourceMappingURL=main.css.map*/

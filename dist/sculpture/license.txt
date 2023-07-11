@@ -1,0 +1,11 @@
+Model Information:
+* title:	La ilusión de la Materia - Chile - 2019 - 4
+* source:	https://sketchfab.com/3d-models/la-ilusion-de-la-materia-chile-2019-4-72f65f38b5ea4d1483a7de9dbb3db62f
+* author:	Felipe Baeza (https://sketchfab.com/baezafelipe)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "La ilusión de la Materia - Chile - 2019 - 4" (https://sketchfab.com/3d-models/la-ilusion-de-la-materia-chile-2019-4-72f65f38b5ea4d1483a7de9dbb3db62f) by Felipe Baeza (https://sketchfab.com/baezafelipe) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
