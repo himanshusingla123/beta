@@ -67,22 +67,36 @@ scene2.add(wireframe2)
 
 
 //Animate
-const time = clock.getElapsedTime()
-const tick = () =>
-{
-    const time = clock.getElapsedTime()
-    wireframe.rotation.y= 1*time
-    wireframe2.rotation.y= 1*time
-    // Update controls
-    controls.update()
+const targetFPS = 60; // Desired frames per second
+const frameTime = 1000 / targetFPS; // Time per frame in milliseconds
+let previousTime = 0;
+
+const tick = (currentTime) => {
+  const elapsed = currentTime - previousTime;
+
+  // Only update and render if enough time has elapsed
+  if (elapsed > frameTime) {
+    previousTime = currentTime - (elapsed % frameTime);
+
+    // Update animation and controls
+    const deltaTime = clock.getDelta();
+    wireframe.rotation.y += deltaTime;
+    wireframe2.rotation.y += deltaTime;
+    controls.update();
     controls2.update();
+
     // Render
-    renderer.render(scene, camera)   
-    renderer2.render(scene2,camera2)    
-    // Call tick again on the next frame   
-    window.requestAnimationFrame(tick)
-}
-tick()
+    renderer.render(scene, camera);
+    renderer2.render(scene2, camera2);
+  }
+
+  // Call tick again on the next frame
+  window.requestAnimationFrame(tick);
+};
+
+// Start the animation loop
+window.requestAnimationFrame(tick);
+
 
 const homeDivHeading = document.getElementById('homeDivHeading')
 const sin = document.querySelectorAll('.sin');
