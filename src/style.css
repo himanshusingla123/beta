@@ -23,6 +23,11 @@ body {
     margin-top: -400%;
 }
 
+#homeDiv
+{
+   margin-top: 13%; 
+}
+
 #homeDivHeading {
     user-select: none;
     position: relative;

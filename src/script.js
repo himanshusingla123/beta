@@ -27,13 +27,19 @@ scene.add(camera)
 const controls = new OrbitControls(camera, canvas)
 controls.enableDamping = true
 controls.enablePan = false; 
-controls.maxDistance = 10
-controls.maxPolarAngle = Math.PI / 2.8
+
+
 
 const gltf_loader=new GLTFLoader()
 var object;
-gltf_loader.load('./sculpture/scene.gltf',(gltf)=>{ object=gltf.scene;object.scale.set(0.13,0.13,0.13);object.position.set(0,-4,0);object.rotation.y=3;scene.add(object)}) 
-   
+gltf_loader.load('./earth/scene.gltf',(gltf)=>{ object=gltf.scene;object.scale.set(1,1,1);object.position.set(0,-1,0);object.rotation.y=3;scene.add(object)}) 
+var moon;
+gltf_loader.load('./moon/scene.gltf',(gltf)=>{ moon=gltf.scene;moon.scale.set(0.25,0.25,0.25);moon.position.set(-1.5,1,0);moon.rotation.y=3;scene.add(moon);})
+const light  = new THREE.AmbientLight('black',1.5)
+var sun;
+gltf_loader.load('./sun/scene.gltf',(gltf)=>{ sun=gltf.scene;sun.scale.set(1,1,1);sun.position.set(20,0,0);sun.rotation.y=3;scene.add(sun)})
+scene.add(light)
+
 const renderer = new THREE.WebGLRenderer({canvas: canvas})
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(window.devicePixelRatio)
@@ -43,12 +49,17 @@ const wireframeMaterial = new THREE.MeshNormalMaterial({wireframe:true})
 wireframeMaterial.side = THREE.DoubleSide
 const wireframe = new THREE.Mesh(wireframeGeometry,wireframeMaterial)
 
-const wireframeGeometry2 = new THREE.BoxBufferGeometry(15,32,16,3,8,10)
+const wireframeGeometry2 = new THREE.BoxBufferGeometry(15,32,16,5,16,20)
 const wireframeMaterial2 = new THREE.MeshNormalMaterial({wireframe:true})
 wireframeMaterial2.side = THREE.DoubleSide
 const wireframe2 = new THREE.Mesh(wireframeGeometry2,wireframeMaterial2)
 
-scene.add(wireframe)
+const textureloader = new THREE.TextureLoader()
+const backgroundstars = textureloader.load('./stars.jpg')
+const starsGeometry = new THREE.SphereBufferGeometry(1000,64,64)
+const starsMaterial = new THREE.MeshBasicMaterial({map:backgroundstars,side:THREE.BackSide})
+const stars = new THREE.Mesh(starsGeometry,starsMaterial)
+scene.add(stars)
 
 const canvas2 = document.querySelector('canvas.outroCanvas')
 const scene2 = new THREE.Scene()
@@ -82,6 +93,7 @@ const tick = (currentTime) => {
     const deltaTime = clock.getDelta();
     wireframe.rotation.y += deltaTime;
     wireframe2.rotation.y += deltaTime;
+    stars.rotation.y += deltaTime*0.1;
     controls.update();
     controls2.update();
 
@@ -135,5 +147,12 @@ sin.forEach((el) => observer .observe (el));
 
 
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+const pointlight = new THREE.PointLight('white',10.5)
+pointlight.position.set(30,0,0)
+scene.add(pointlight)
 
+const pointlight2 = new THREE.PointLight('black',5)
+pointlight2.position.set(-1,1.2,0)
+scene.add(pointlight2)
